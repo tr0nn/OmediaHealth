@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet"  href="registration.css"><link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="WeiMealActGrid.css"><link>
+</head>
+<body>
+    <a href="Index.html" id="btnsuc" class="btn btn-success">
+        <span class="glyphicon glyphicon-arrow-left"></span> Main
+      </a>
+        
+        <div id="reg-form">
+            <h1 id="enter-info">Enter information about you</h1>
+            <div id="reg_3_form">
+                <input class="form-group" id="inputname" type="text" placeholder="Enter name"> <br>
+                <input class="form-group" id="inputemail" type="text" placeholder="Enter email"> <br>
+                <input class="form-group" id="inputpassword" type="password" placeholder="Enter password"><br>  
+            </div>
+            <div id="middleline"></div>
+            <div id="reg_4_form">
+                <input class="form-group" id="desired_weight" type="number" placeholder="Desired weight"><br>  
+                <input class="form-group" id="meal_per_day" type="number" placeholder="Desired meal calories per day"><br> 
+                <input class="form-group" id="activity_per_day" type="number" placeholder="Desired activity calories per day"><br>                 
+            </div>
+            <button onclick="save_info()"  type="submit" class="btn btn-success" id="submitbtn">Submit</button>
+        </div>
+        
+
+        <div id="profile-register">
+            <div id="profile-about">
+                <ul>
+                    <li><h3>Name:</h3></li>
+                    <li><h4 style="position: relative;" id="profile-name"></h4></li>
+                </ul><hr>
+                <ul>
+                    <li><h3>Email:</h3></li>
+                    <li><h4 id="profile-email"></h4></li>
+                </ul><hr>
+                <ul>
+                    <li><h3>Password:</h3></li>
+                    <li><h4 id="profile-password"></h4></li>
+                </ul><hr>
+                <ul>
+                    <li><h3>Desired weight /kg: </h3></li>
+                    <li><h3 id="desired_weightkg"></h3></li>
+                </ul><hr>
+                <ul>
+                    <li><h3>Meal calories per day: </h3></li>
+                    <li><h3 id="meal-per-day"></h3></li>
+                </ul><hr>
+                <ul>
+                    <li><h3>Activity calories per day:</h3></li>
+                    <li><h3 id="activity-per-day"></h3></li> 
+                </ul>
+            </div>
+            
+            <div id="weight-form">
+                    <h2>Weight </h2>
+                    <label for="datetime">date :</label>
+                    <input type="date" id="weightDateTime" name="datetime">
+                    <label for="datetime">enter your weight: /kg </label>
+                    <input style="width: 100px; height: 25px;" id="userWeight" class="form-group" type="number" placeholder="">
+                    <h1 id="weight-form-id"></h1>
+                    <h1 id="weight-form-id-2"></h1>
+            </div>
+            <div id="meal-form">
+                <h2>Meal </h2>
+                <label for="datetime2">date : </label>
+                <input type="date" id="mealdate" name="datetime2">
+                <label for="datetime"> meal name : </label>
+                <input style="width: 200px; height: 25px;" id="userMealname" class="form-group" type="text" placeholder="">
+                <label for="datetime">calories :</label>
+                <input style="width: 100px; height: 25px;" id="userMealCalories" class="form-group" type="number" placeholder="">
+                <button class="btn btn-primary" type="button" onclick="InfoSave()">save</button>
+            </div>
+
+            <div id="activity-form">
+                <h2>Activity </h2>
+                <label for="datetime3">date :</label>
+                <input type="date" id="activitydate" name="datetime3">
+                <label for="activity1">activity type :</label>
+                <select name="activity1" id="activityType">
+                    <option value="Hiking">Hiking </option>
+                    <option value="Running">Running </option>
+                    <option value="Swimming">Swimming </option>
+                </select>
+                <label  for="activitydistance">distance :</label>
+                <input style="width: 100px;" type="number" id="activityDistancee" name="activitydistance">
+            </div>
+
+            <button class="btn-default" onclick="Weight1Edit()" id="Weight-1">Edit</button>
+            <button class="btn-default" onclick="Weight2Edit()" id="Weight-2">Edit</button>
+            <button class="btn-default" onclick="Weight3Edit()" id="Weight-3">Edit</button>
+            <button class="btn-default" onclick="Meal1Edit()" id="Meal-1">Edit</button>
+            <button class="btn-default" onclick="Meal2Edit()" id="Meal-2">Edit</button>
+            <button class="btn-default" onclick="Meal3Edit()" id="Meal-3">Edit</button>
+            <button class="btn-default" onclick="Activities1Edit()" id="activity-1">Edit</button>
+            <button class="btn-default" onclick="Activities2Edit()" id="activity-2">Edit</button>
+            <button class="btn-default" onclick="Activities3Edit()" id="activity-3">Edit</button>
+            <div  class="grid-container">
+                <div  class="grid-item">Date</div>
+                <div  class="grid-item">Weight </div>
+                <div  class="grid-item">Meals </div>  
+                <div  class="grid-item">Activities </div>
+                <div id="d1"  class="grid-item">0000-00-00</div>
+                <div id="d2"  class="grid-item"></div>
+                <div id="d3" class="grid-item"></div>
+                <div id="d4" class="grid-item"></div>
+                <div id="d5" class="grid-item">-</div>
+                <div id="d6" class="grid-item"></div>
+                <div id="d7" class="grid-item"></div>
+                <div id="d8" class="grid-item"></div> 
+                <div id="d9" class="grid-item">-</div>
+                <div id="d10" class="grid-item"></div>
+                <div id="d11" class="grid-item"></div> 
+                <div id="d12" class="grid-item"></div> 
+              </div>
+              
+        </div>
+<script type="text/javascript" src="register.js"></script>
+</body>
+</html> 
